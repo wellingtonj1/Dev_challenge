@@ -7,6 +7,14 @@ from questionarios.models.pergunta import Pergunta
 from questionarios.models.pessoa import Pessoa
 
 class Exercicios(admin.ModelAdmin):
+    """
+        Lista de exercicios para o admin
+    Args:
+        admin (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     
     #show question text instead of id
     def pergunta(self, obj):
@@ -39,6 +47,14 @@ class Exercicios(admin.ModelAdmin):
     list_per_page = 10
     
 class Alternativas(admin.ModelAdmin):
+    """
+        Lista de alternativas para o admin
+    Args:
+        admin (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     
     # show question text instead of id
     def pergunta(self, obj):
@@ -60,6 +76,14 @@ class Alternativas(admin.ModelAdmin):
     list_per_page = 10
 
 class Perguntas(admin.ModelAdmin):
+    """
+        Lista de perguntas para o admin
+    Args:
+        admin (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
         
     # show question text instead of id
     def pergunta(self, obj):
@@ -71,6 +95,14 @@ class Perguntas(admin.ModelAdmin):
     list_per_page = 10
 
 class Pessoas(admin.ModelAdmin):
+    """
+        Lista de pessoas para o admin
+    Args:
+        admin (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
         
     # show user name instead of id
     def nome(self, obj):
@@ -85,4 +117,3 @@ admin.site.register(Exercicio, Exercicios)
 admin.site.register(Alternativa, Alternativas)
 admin.site.register(Pergunta, Perguntas)
 admin.site.register(Pessoa, Pessoas)
-# admin.site.register(Exercicio, Exercicios)

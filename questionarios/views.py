@@ -8,6 +8,15 @@ from questionarios.models.pessoa import Pessoa
 from questionarios.serializer import ExercicioSerializer
 
 class ExerciciosViewSet(viewsets.ModelViewSet):
+    """ 
+        View para listar todos os exercicios 
+
+    Args:
+        viewsets (_type_): _description_
+
+    Returns:
+        _type_: _description_
+    """
     
     queryset = Exercicio.objects.all()
     serializer_class = ExercicioSerializer
@@ -27,10 +36,23 @@ class ExerciciosViewSet(viewsets.ModelViewSet):
         return JsonResponse(json_arr)
 
 class DesempenhoViewSet(generics.ListAPIView):
-    """ This class generate a json returning the usuario_id, usuario_name and the number of correct answers """
+    """ 
+        View para buscar o desemepnho de um usuario
+
+    Args:
+        generics (_type_): _description_
+    """
     
     def get(self, request, usuario_id):
-        """ This method return a json with the usuario_id, usuario_name and the number of correct answers """
+        """
+            Este método retorna um json com os dados de usuário, e desempenho do mesmo nos exercicios atribuidos ao mesmo
+        Args:
+            request (_type_): _description_
+            usuario_id (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         
         json_arr = []
         json_return = []
