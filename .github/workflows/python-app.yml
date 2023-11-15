@@ -10,11 +10,14 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+sonarcloud:
+    name: SonarCloud
+    runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/upload-artifact@v2
+        with:
+          name: code-coverage
+          path: htmlcov
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
@@ -33,8 +36,7 @@ jobs:
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@master
       with:
-          targetBranch: main
+          targetBranch: master
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          
