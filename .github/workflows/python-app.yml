@@ -5,11 +5,7 @@ name: Build Ci
 on:
   push:
     branches:
-      - main
-      - feature/*
-      - hotfix/*
-      - bugfix/*
-      - fix/*
+      - master
 
   pull_request:
     types: [opened, synchronize, reopened]
