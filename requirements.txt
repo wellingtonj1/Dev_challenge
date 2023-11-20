@@ -1,4 +1,4 @@
-django
+aadjango
 django-widget-tweaks
 psycopg2
 djangorestframework
