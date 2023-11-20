@@ -1,4 +1,5 @@
-aadjango
+django
 django-widget-tweaks
 psycopg2
 djangorestframework
+pytest
